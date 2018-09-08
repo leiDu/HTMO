@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-3-19 21:21:26 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.pers.du.htmo.model.Hisday" table="HISDAY">
+        <id name="leaveId" type="int">
+            <column name="leaveId" />
+            <generator class="assigned" />
+        </id>
+        <property name="employeeId" type="int">
+            <column name="employeeId" />
+        </property>
+        <property name="employeeName" type="java.lang.String">
+            <column name="employeeName" />
+        </property>
+        <property name="startTime" type="java.sql.Date">
+            <column name="startTime" />
+        </property>
+        <property name="endTime" type="java.sql.Date">
+            <column name="endTime" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="status" />
+        </property>
+        <property name="leaveReason" type="java.lang.String">
+            <column name="leaveReason" />
+        </property>
+        <property name="assessName" type="java.lang.String">
+            <column name="assessName"/>
+        </property>
+       <!-- <many-to-one name="employee" class="com.pers.du.htmo.model.Employee">
+            <column name="employeeName" not-null="true"/>
+        </many-to-one> --> 
+    </class>
+</hibernate-mapping>

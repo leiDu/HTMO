@@ -1,0 +1,79 @@
+private Employee employee:
+Employee:类
+employee:对象
+
+java.lang.NoSuchMethodException: com.pers.du.htmo.action.LoginAction.execute()
+原因:少execute()方法
+
+java.lang.NullPointerException
+	at com.pers.du.htmo.dao.EmployeeDao.getEmployee(EmployeeDao.java:40)
+	at com.pers.du.htmo.service.EmployeeService.login(EmployeeService.java:32)
+	at com.pers.du.htmo.action.EmployeeAction.login(EmployeeAction.java:54)
+	
+java.lang.Exception: employee and password err
+	at com.pers.du.htmo.service.EmployeeService.login(EmployeeService.java:37)
+	at com.pers.du.htmo.action.EmployeeAction.login(EmployeeAction.java:54)
+解决:我是通过创建对象的方式进行传值，而出现这个问题的是在login界面的name属性里直接传值，导致action里不能获得值，所以把要用"对象名.属性名"的方式进行调用传值。
+
+实体类的hiberbate映射出现列错误，是因为hibernate里的列名和数据库的列名不相似
+
+
+target属性
+_self:登陆后，在浏览器不会再开一个窗口
+_pesent:登录后，在浏览器再开一个窗口
+
+type="redirect"值,从一个界面跳到另一个界面
+
+load()和get()加载的区别
+get()是根据id来进行查询的
+load()可返回没有加载实体数据的代理类实例，而get方法永远返回有实体数据的对象
+
+javax.persistence.PersistenceException: org.hibernate.exception.ConstraintViolationException: could not execute statement
+
+在给时间传值时，如果是Date类型的，可以用js的日历控件
+在引入js的路径是要先获得路径src="${pageContext.request.contextPath}/时间控件路径"
+
+session.update(对象或..) 更新数据，没有抛出异常
+session.saveOrUpdate(对象或..)根据主键更新数据,如果数据存在，那么更新，反之，则执行insert
+<s:submit name="" align=""/>标签默认按钮在右侧
+
+java.lang.IllegalArgumentException: attempt to create saveOrUpdate event with null entity
+
+java.lang.NoSuchMethodException: com.pers.du.htmo.action.HisdayAction.upPage
+你提交到的不是这个action ，查查配置文件，有没有一样的path
+你的action里面没有这个方法
+
+No result defined for action com.pers.du.htmo.action.ReimburseAction and result newUp
+在struts.xml文件的返回值与action里的返回值不对应
+在struts.xml文件里的配置出错
+
+java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: hisday is not mapped [from hisday]
+HQL查询语句格式应为 "from Hisday hisday";在与数据库的表映射时的格式相似
+
+
+java.lang.NoSuchMethodException: com.pers.du.htmo.action.HisdayAction.Reimburse_info()
+struts.xml里查询、更新放在一个action里,导致无法找到相应的方法
+把各自的方法放在各自的action里,正常运行
+
+java.lang.IllegalArgumentException: attempt to create delete event with null entity
+
+java.lang.NumberFormatException:for input string ""
+我在表单的属性值写错了
+表单中没有数据，而又向后台进行数据类型转换，所以报错，而表单中没有数据时，提交到后台的是"",而不是null
+
+数据库外键关联出错问题
+alter table 从表名 
+ add constraint 外键(FK_从表_主表) foreign key (从表列名) references 主表  (主表列名)
+我出错的地方没有给 从表列名和主表列名前要空一格
+
+在Employee.hbm.xml文件中，Position类和Department类在关联employee类时，要在Employee类中写到 e.g:
+<many-to-one name="position" class="com.per.du.htmo.model.Position">
+  <column name="positionId" not-null="true" />
+</may-to-one>
+的字样，
+我的错误：类型的不一致，在Employee类中找不到geter方法,constructor等错误,语句错误....
+解决：根据geter方法和constructor等关键字可以推出，可以在实体类(e.g:Employee类)中使用欲对象的方法，解决问题。
+我的在Employee实体类中创建了Position类和Departmental类的欲对象，并给了getter和setter方法,成功解决
+
+界面传给后台的方式有两种
+基本类型和欲对象

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-5-19 11:45:55 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.pers.du.htmo.model.Reimburse" table="REIMBURSE">
+        <id name="reimburseId" type="int">
+            <column name="REIMBURSEID" />
+            <generator class="assigned" />
+        </id>
+        <property name="employeeId" type="int">
+            <column name="EMPLOYEEID" />
+        </property>
+        <property name="employeeName" type="java.lang.String">
+            <column name="EMPLOYEENAME" />
+        </property>
+        <property name="fillTime" type="java.sql.Date">
+            <column name="FILLTIME" />
+        </property>
+        <property name="reimReason" type="java.lang.String">
+            <column name="REIMREASON" />
+        </property>
+        <property name="allAmount" type="int">
+            <column name="ALLAMOUNT" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="STATUS" />
+        </property>
+        <property name="assessName" type="java.lang.String">
+            <column name="ASSESSNAME" />
+        </property>
+    </class>
+</hibernate-mapping>

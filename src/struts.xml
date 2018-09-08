@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+<struts>
+  <package name="default" namespace="/" extends="struts-default">
+    <!-- login -->
+    <action name="login" class="com.pers.du.htmo.action.EmployeeAction" method="login">
+       <result name="SUCCESS">/jsp/index.jsp</result>
+    </action>
+    <!-- outlogin -->
+    <action name="outLogin" class="com.pers.du.htmo.action.EmployeeAction" method="outLogin">
+       <result name="out" type="redirect">/jsp/login.jsp</result> 
+    </action> 
+    
+    <!-- hisday look -->
+    <action name="*" class="com.pers.du.htmo.action.HisdayAction" method="{1}">
+    	 <result name="sel">/jsp/hisday_sePage.jsp</result>
+    	 <result name="info">/jsp/hisday_select.jsp</result>
+    	 <result name="addInfo">/jsp/hisday_add.jsp</result>
+    	 <result name="toAddInfo">/jsp/index.jsp</result>
+    	 <result name="upPage">/jsp/hisday_update.jsp</result>
+    	 <result name="upSeccess">/jsp/index.jsp</result>
+    	 <result name="deleHis">/jsp/index.jsp</result>
+    	 <result name="success">/jsp/index.jsp</result>
+    </action>  
+    <!--  <action name="sta" class="com.pers.du.htmo.HisdayAction" method="sta">
+         <result name="success">/jsp/index.jsp</result>
+    </action>  -->
+    
+   <!-- <action name="Reimburse_*" class="com.pers.du.htmo.action.ReimburseAction" method="{1}">
+          <result name="page">/jsp/reimburse_upReimPa.jsp</result>
+          <result name="see">/jsp/reimburse_select.jsp</result>
+          <result name="remInfo">/jsp/reimburse_add.jsp</result>
+          <result name="reimIncream">/jsp/index.jsp</result>
+          <result name="newUp">/jsp/reimburse_update.jsp</result>
+          <result name="date">/jsp/index.jsp</result>
+   </action> -->
+    
+    <action name="info" class="com.pers.du.htmo.action.ReimburseAction" method="info">
+       <result name="page">/jsp/reimburse_upReimPa.jsp</result>
+    </action>
+    <action name="find" class="com.pers.du.htmo.action.ReimburseAction" method="find">
+       <result  name="see">/jsp/reimburse_update.jsp</result>
+       <!-- <result name="see">/jsp/reimburse_select</result> 该结果会转到查询界面，但不会和修改连接在一起-->
+    </action>  
+    
+    <action name="toIncreament" class="com.pers.du.htmo.action.ReimburseAction" method="toIncreament">
+       <result name="remInfo">/jsp/reimburse_add.jsp</result>
+    </action>
+    <action name="increament" class="com.pers.du.htmo.action.ReimburseAction" method="increament">
+       <result name="reimIncream">/jsp/index.jsp</result>
+    </action>
+    <!-- <action name="upDte" class="com.pers.du.htmo.action.ReimburseAction" method="upDte">
+       <result name="newUp">/jsp/reimburse_update.jsp</result>
+    </action> -->
+    <action name="upPaIn" class="com.pers.du.htmo.action.ReimburseAction" method="upPaIn">
+      <result name="date">/jsp/index.jsp</result>
+    </action> 
+    <action name="deleReim" class="com.pers.du.htmo.action.ReimburseAction" method="deleReim">
+      <result name="dele">/jsp/index.jsp</result>
+    </action>
+  </package>
+</struts>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <action name="sele" class="com.pers.du.htmo.action.HisdayAction" method="sele">
+       <result name="sel">/jsp/hisday_sePage.jsp</result>
+    </action>
+    <action name="look" class="com.pers.du.htmo.action.HisdayAction" method="look">
+       <result name="info">/jsp/hisday_select.jsp</result>
+    </action>
+    hisday toAdd
+    <action name="toAdd" class="com.pers.du.htmo.action.HisdayAction" method="toAdd">
+       <result name="addInfo">/jsp/hisday_add.jsp</result>
+    </action>
+    <action name="add" class="com.pers.du.htmo.action.HisdayAction" method="add">
+       <result name="toAddInfo">/jsp/index.jsp</result>
+    </action>
+    hisday update
+    <action name="up" class="com.pers.du.htmo.action.HisdayAction" method="up">
+       <result name="upPage">/jsp/hisday_update.jsp</result>
+    </action>
+    <action name="upDate" class="com.pers.du.htmo.action.HisdayAction" method="upDate">
+       <result name="upSeccess">/jsp/index.jsp</result>
+    </action> -->
+
+
+ <!-- <action name="find" class="com.pers.du.htmo.action.ReimburseAction" method="">
+       <result  name="see">/jsp/reimburse_select.jsp</result>
+       <result name="newUp">/jsp/reimburse_update.jsp</result>
+       <result name="date">/jsp/index.jsp</result>
+    </action>  --> 
+    
+
+
+
+
+
+
+
+
+
+   
